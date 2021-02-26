@@ -29,7 +29,11 @@ repositories {
     jcenter()
 }
 dependencies {
+    compileOnly(kotlin("stdlib-jdk8"))
+
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
+    compileOnly("org.jetbrains.kotlin:kotlin-compiler-embeddable")
+
 }
 
 // Configure gradle-intellij-plugin plugin.
