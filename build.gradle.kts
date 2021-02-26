@@ -9,7 +9,7 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.4.30"
+    id("org.jetbrains.kotlin.jvm") version "1.4.31"
     // gradle-intellij-plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
     id("org.jetbrains.intellij") version "0.7.2"
     // gradle-changelog-plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
@@ -29,7 +29,11 @@ repositories {
     jcenter()
 }
 dependencies {
+    compileOnly(kotlin("stdlib-jdk8"))
+
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
+    compileOnly("org.jetbrains.kotlin:kotlin-compiler-embeddable")
+
 }
 
 // Configure gradle-intellij-plugin plugin.
